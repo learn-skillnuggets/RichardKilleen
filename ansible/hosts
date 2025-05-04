@@ -1,0 +1,33 @@
+[routers]
+London ansible_host=192.168.47.194
+Manchester ansible_host=192.168.47.132
+asia ansible_host=192.168.47.226
+Americia ansible_host=192.168.47.217
+
+[routers:vars]
+ansible_user=YouTube
+ansible_ssh_pass=YouTube1
+ansible_port=22
+ansible_connection=network_cli
+
+[switches]
+Mgmt_Switch_london ansible_host=192.168.1.20
+Mgmt_Switch_newyork ansible_host=10.0.1.15
+Mgmt_Switch_tokyo ansible_host=172.16.5.25
+
+[switches:vars]
+ansible_user=YouTube123
+ansible_ssh_pass=YouTube123
+ansible_port=22
+ansible_connection=network_cli
+
+[servers]
+web_server_01 ansible_host=192.168.2.100
+db_server_02 ansible_host=192.168.2.101
+app_server_03 ansible_host=192.168.2.102
+
+[servers:vars]
+ansible_user=linux_admin
+ansible_ssh_pass=server_pw
+ansible_port=22
+ansible_connection=ssh
