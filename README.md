@@ -43,9 +43,7 @@ This repository acts as a reference index and file host for:
 ├── workbooks/
 │   ├── ccie-sp/
 │   ├── ccnp-sp/
-├── docs/
-│   └── markdown/
-└── README.md
+
 ```
 
 ---
