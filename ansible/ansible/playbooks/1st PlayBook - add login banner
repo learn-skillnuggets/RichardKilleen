@@ -1,8 +1,0 @@
-- name: Configure router banner
-  hosts: routers
-  gather_facts: no
-  tasks:
-    - name: Set login banner
-      ios_config:
-        lines:
-          - banner login ^CUnauthorized access prohibited only YouTube members are allowed access please contact Richard Killeen for more information^C 
