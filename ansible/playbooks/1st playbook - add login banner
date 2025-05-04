@@ -3,6 +3,10 @@
   gather_facts: no
   tasks:
     - name: Set login banner
-      ios_config:
-        lines:
-          - banner login ^CUnauthorized access prohibited only YouTube members are allowed access please contact Richard Killeen for more information^C 
+      cisco.ios.ios_banner:
+        banner: login
+        text: |
+          Unauthorized access prohibited.
+          Only YouTube members are allowed access.
+          Please contact Richard Killeen for more information.
+        state: present
