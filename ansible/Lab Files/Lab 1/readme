@@ -1,0 +1,3 @@
+In the 1st lab we will jump stright into Ansible, we will install Ansible and copy a bacis ansible.cfg file and a basic hosts file.
+Then we will deploy our 1st playbook and run a 2nd playbook to show the routers interfaces.
+This is a demo lab and we will just copy past the configs / plays and in Lab 2 we will start building the files.
