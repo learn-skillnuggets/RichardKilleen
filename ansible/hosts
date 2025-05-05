@@ -12,9 +12,9 @@ ansible_connection=network_cli
 ansible_network_os=cisco.ios.ios
 
 [switches]
-Mgmt_Switch_london ansible_host=192.168.1.20
-Mgmt_Switch_newyork ansible_host=10.0.1.15
-Mgmt_Switch_tokyo ansible_host=172.16.5.25
+Mgmt-Switch-1 ansible_host=192.168.1.20
+Mgmt-Switch-2 ansible_host=10.0.1.15
+Mgmt-Switch-3 ansible_host=172.16.5.25
 
 [switches:vars]
 ansible_user=YouTube123
@@ -23,12 +23,12 @@ ansible_port=22
 ansible_connection=network_cli
 
 [servers]
-web_server_01 ansible_host=192.168.2.100
-db_server_02 ansible_host=192.168.2.101
-app_server_03 ansible_host=192.168.2.102
+http-server_01 ansible_host=192.168.2.100
+db-server_02 ansible_host=192.168.2.101
+app-server_03 ansible_host=192.168.2.102
 
 [servers:vars]
-ansible_user=linux_admin
-ansible_ssh_pass=server_pw
+ansible_user=sysadmin
+ansible_ssh_pass=sysadmin1
 ansible_port=22
 ansible_connection=ssh
