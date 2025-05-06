@@ -1,0 +1,40 @@
+interfaces:
+  R1:
+    - { intf: 'GigabitEthernet0/1', desc: 'Manchester G4' }
+
+  R2:
+    - { intf: 'GigabitEthernet0/1', desc: 'London G4' }
+
+  Manchester:
+    - { intf: 'GigabitEthernet4', desc: 'R1 G0/1' }
+    - { intf: 'GigabitEthernet3', desc: 'London G3' }
+    - { intf: 'GigabitEthernet2', desc: 'America G2' }
+
+  London:
+    - { intf: 'GigabitEthernet3', desc: 'Manchester G3' }
+    - { intf: 'GigabitEthernet2', desc: 'Asia G2' }
+    - { intf: 'GigabitEthernet4', desc: 'R2 G0/1' }
+
+  Switch1:
+    - { intf: 'GigabitEthernet0/1', desc: 'Manchester G2' }
+    - { intf: 'GigabitEthernet0/2', desc: 'America G2' }
+
+  Switch2:
+    - { intf: 'GigabitEthernet0/2', desc: 'London G2' }
+    - { intf: 'GigabitEthernet0/3', desc: 'Asia G2' }
+
+  America:
+    - { intf: 'GigabitEthernet2', desc: 'Manchester G2' }
+    - { intf: 'GigabitEthernet3', desc: 'Asia G3' }
+    - { intf: 'GigabitEthernet4', desc: 'R3 G0/1' }
+
+  Asia:
+    - { intf: 'GigabitEthernet2', desc: 'London G2' }
+    - { intf: 'GigabitEthernet3', desc: 'America G3' }
+    - { intf: 'GigabitEthernet4', desc: 'R4 G0/1' }
+
+  R3:
+    - { intf: 'GigabitEthernet0/1', desc: 'America G4' }
+
+  R4:
+    - { intf: 'GigabitEthernet0/1', desc: 'Asia G4' }
