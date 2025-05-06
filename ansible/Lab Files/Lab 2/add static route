@@ -1,0 +1,11 @@
+---
+- name: Configure default static route on IOS routers
+  hosts: edge
+  gather_facts: no
+  connection: network_cli
+
+  tasks:
+    - name: Add default route
+      cisco.ios.ios_config:
+        lines:
+          - ip route 0.0.0.0 0.0.0.0 192.168.47.2
