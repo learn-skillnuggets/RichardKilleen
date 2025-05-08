@@ -1,0 +1,38 @@
+---
+
+- name: ntp server setup
+  hosts: servers
+  become: yes
+
+  tasks:
+    - name: install ntp package
+      apt:
+        name: chrony
+        state: present
+        update_cache: yes
+
+    - name: setup as a server
+      lineinfile:
+        path: /etc/chrony/chrony.conf
+        regexp: '^pool '
+        line: "# commited ny automation live on video"
+        state: present
+
+    - name: add server conf
+      lineinfile:
+        path: /etc/chrony/chrony.conf
+        line: "allow 192.168.47.0/24"
+        create: yes
+
+    - name: restart ntp
+      systemd:
+        name: chrony
+        enabled: yes
+        state: restarted
+
+    - name: allow FW
+      ufw:
+        rule: allow
+        port: 123
+        proto: udp
+        comment: "added live on video "

@@ -1,0 +1,13 @@
+---
+
+- name: add ntp
+  hosts: edge,routers
+  gather_facts: no
+  connection: network_cli
+
+  tasks:
+    - name: add ntp
+      cisco.ios.ios_config:
+        lines:
+          - ntp server 192.168.47.200 prefer minpoll 4 maxpoll 4
+          

@@ -23,3 +23,13 @@ ansible_ssh_pass=YouTube1
 ansible_port=22
 ansible_connection=network_cli
 ansible_network_os=cisco.ios.ios
+
+[servers]
+app-server ansible_host=192.168.47.200
+
+[servers:vars]
+ansible_user=sysadmin
+ansible_ssh_pass=sysadmin123
+ansibe-become=yes
+ansible_become_method=sudo
+ansible_become_password=sysadmin123
