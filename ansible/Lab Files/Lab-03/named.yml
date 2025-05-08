@@ -1,0 +1,29 @@
+---
+
+- name: configure main routers
+  hosts: all
+  gather_facts: no
+  connection: network_cli
+  vars_files:
+    - Router_Interfaces.yml
+
+  tasks:
+    - name: configure interfaces and no shut
+      cisco.ios.ios_config:
+        lines:
+          - interface {{ item.intf }}
+          - description {{ item.desc }}
+          - no shutdown
+      loop: "{{ interfaces[inventory_hostname] | default([]) }}"
+
+    - name: configure ip
+      cisco.ios.ios_config:
+        lines:
+          - interface {{ item.intf }}
+          - ip address {{ item.ip }} {{ item.mask }}
+      loop: "{{ interfaces[inventory_hostname] | default ([]) }}"
+      when:
+        - item.ip is defined
+        - item.mask is defined
+
+        

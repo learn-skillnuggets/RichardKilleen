@@ -1,0 +1,15 @@
+---
+
+- name: loopbacks
+  hosts: edge
+  gather_facts: no
+  connection: network_cli
+
+  tasks:
+    - name: add loopbacks to edge routers
+      cisco.ios.ios_config:
+        lines:
+          - interface loopback 0
+          - ip address 100.100.100.{{ inventory_hostname[1:] }} 255.255.255.255
+          - description edge-loopback
+          - no shutdown

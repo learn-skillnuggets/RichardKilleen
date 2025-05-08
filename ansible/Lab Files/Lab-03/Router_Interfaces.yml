@@ -1,0 +1,49 @@
+interfaces:
+  R1:
+    - { intf: 'GigabitEthernet 0/1', desc: 'Manchester-G4', ip: '10.0.1.1', mask: '255.255.255.0' }
+
+  R2:
+    - { intf: 'GigabitEthernet 0/1', desc: 'London-G4', ip: '10.0.2.1', mask: '255.255.255.0' }
+
+  Manchester:
+    - { intf: 'GigabitEthernet 4', desc: 'R1-G01', ip: '10.0.1.2', mask: '255.255.255.0' }
+    - { intf: 'GigabitEthernet 3', desc: 'London-G3', ip: '172.16.10.1', mask: '255.255.255.0' }
+    - { intf: 'GigabitEthernet 2', desc: 'America-G2', ip: '172.16.20.1', mask: '255.255.255.0' }
+    - { intf: 'loopback 0', desc: 'Main-Loopback', ip: '1.1.1.1', mask: '255.255.255.255' }
+
+  London:
+    - { intf: 'GigabitEthernet 3', desc: 'Manchester-G3', ip: '172.16.10.2', mask: '255.255.255.0' }
+    - { intf: 'GigabitEthernet 2', desc: 'Asia-G2', ip: '172.16.40.2', mask: '255.255.255.0' }
+    - { intf: 'GigabitEthernet 4', desc: 'R2-G01', ip: '10.0.2.2', mask: '255.255.255.0' }
+    - { intf: 'loopback 0', desc: 'Main-Loopback', ip: '2.2.2.2', mask: '255.255.255.255' }
+
+  Switch1:
+    - { intf: 'GigabitEthernet 0/1', desc: 'Manchester-G2' }
+    - { intf: 'GigabitEthernet 0/2', desc: 'America-G2' }
+
+  Switch2:
+    - { intf: 'GigabitEthernet 0/2', desc: 'London-G2' }
+    - { intf: 'GigabitEthernet 0/3', desc: 'Asia-G2' }
+
+  Switch3:
+    - { intf: 'GigabitEthernet 0/2', desc: 'America-G3' }
+    - { intf: 'GigabitEthernet 0/1', desc: 'Asia-G3' }
+
+
+  America:
+    - { intf: 'GigabitEthernet 2', desc: 'Manchester-G2', ip: '172.16.20.2', mask: '255.255.255.0' }
+    - { intf: 'GigabitEthernet 3', desc: 'Asia-G3', ip: '172.16.30.1', mask: '255.255.255.0' }
+    - { intf: 'GigabitEthernet 4', desc: 'R3-G01', ip: '10.0.3.2', mask: '255.255.255.0' }
+    - { intf: 'loopback 0', desc: 'Main-Loopback', ip: '3.3.3.3', mask: '255.255.255.255' }
+
+  Asia:
+    - { intf: 'GigabitEthernet 2', desc: 'London-G2', ip: '172.16.40.1', mask: '255.255.255.0' }
+    - { intf: 'GigabitEthernet 3', desc: 'America-G3', ip: '255.255.255.0' }
+    - { intf: 'GigabitEthernet 4', desc: 'R4-G01', ip: '10.0.4.2', mask: '255.255.255.0' }
+    - { intf: 'loopback 0', desc: 'Main-Loopback', ip: '4.4.4.4', mask: '255.255.255.255' }
+
+  R4:
+    - { intf: 'GigabitEthernet 0/1', desc: 'Asia-G4', ip: '10.0.4.1', mask: '255.255.255.0' }
+
+  R3:
+    - { intf: 'GigabitEthernet 0/1', desc: 'Americia-G4', ip: '10.0.3.1', mask: '255.255.255.0' }

@@ -1,0 +1,25 @@
+[routers]
+London ansible_host=192.168.47.194
+Manchester ansible_host=192.168.47.132
+Asia ansible_host=192.168.47.226
+America ansible_host=192.168.47.217
+
+[routers:vars]
+ansible_user=YouTube
+ansible_ssh_pass=YouTube1
+ansible_port=22
+ansible_connection=network_cli
+ansible_network_os=cisco.ios.ios
+
+[edge]
+R1 ansible_host=192.168.47.21
+R2 ansible_host=192.168.47.22
+R3 ansible_host=192.168.47.23
+R4 ansible_host=192.168.47.24
+
+[edge:vars]
+ansible_user=YouTube
+ansible_ssh_pass=YouTube1
+ansible_port=22
+ansible_connection=network_cli
+ansible_network_os=cisco.ios.ios
