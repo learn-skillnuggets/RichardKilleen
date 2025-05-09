@@ -1,1 +1,23 @@
+Lab 4 - Configuring NTP on Routers and Setting Up a Ubuntu NTP Server
+This lab covers the critical task of time synchronisation in network environments. You'll configure NTP on all routers for consistent timekeeping and set up a dedicated Ubuntu server as a central NTP source, ensuring accurate logs and time-based security protocols across your lab.
 
+Related Blog Post:
+http://richardkilleen.co.uk/blog/network-automation/ansible/ansible-lab-04-automating-server-configuration-and-routers-ntp/
+
+Related Video:
+https://youtu.be/oUA-IJXiYrA?si=z6f9LzTAiMtrBLbm
+
+Video Description:
+In this lab, we expand our automation setup to include both network devices and servers, configuring NTP for accurate time synchronisation across your network. This is a practical real-world scenario where you'll set up a Ubuntu NTP server and automate the configuration of NTP on your Cisco routers.
+
+🔧 What you’ll do in this lab:
+
+Add an Ubuntu server to your Ansible inventory
+
+Configure the server as an NTP server using Chrony
+
+Allow NTP traffic through the server’s firewall
+
+Configure NTP settings on all Cisco routers
+
+Verify your NTP configuration with show ntp associations and show ntp status
