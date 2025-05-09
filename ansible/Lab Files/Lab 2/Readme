@@ -1,0 +1,25 @@
+Lab 2 - Adding Interface Descriptions and MGMT Static Routing
+In this lab, you'll expand your network automation skills by adding descriptive names to physical interfaces and configuring management static routes. This practical exercise builds on the basics of Ansible to streamline network documentation and routing, ensuring devices are correctly identified and reachable in your lab environment.
+
+Related Blog Post:
+http://richardkilleen.co.uk/blog/network-automation/ansible-lab-2-static-routing-and-ansible-ad-hoc-commands/
+
+Related Video:
+https://youtu.be/FqjS8mrKGPg?si=sm2H9vDsOSqthc3_
+
+Video Description:
+In this lab, we expand our Ansible setup by adding more Cisco routers to our inventory and performing live automation tasks in a Cisco lab running on EVE-NG.
+
+🔧 What you’ll do in this lab:
+
+Manually update the Ansible hosts inventory with new devices
+
+Use ansible all -m ping to verify SSH reachability
+
+Create a playbook to run show ip route and identify routing issues
+
+Spot missing static routes on two routers from the output
+
+Write a second playbook to push static routes to all routers
+
+Re-verify the routing table to confirm successful deployment
