@@ -1,1 +1,10 @@
+This is the location of the supporting files for my Ansible automation series on YouTube and their related blog posts.
+https://www.youtube.com/@SkillNuggets
+http://richardkilleen.co.uk/blog/
 
+Contained in the lab files are the lab lessions which contain the playbooks, inventorys that i have used and the senario workbooks.
+
+Lab 1 - Basics of installing ansible and running our first playbook
+Lab 2 - Addinging interface descriptions and MGMT static routing
+Lab 03 - Adding loopback interface and ip addressing, adding phyical interface addressing, descriptions and no shut
+Lab 04 - Ensuring all routers have NTP configured and configuring a Ubuntu server for NTP
