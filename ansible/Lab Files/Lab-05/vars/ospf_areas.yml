@@ -1,0 +1,25 @@
+ospf_areas:
+  - router: "R1"
+    process_id: 1
+    area: 1
+    networks:
+      - { network: "100.100.100.1", wildcard: "0.0.0.0" }
+      - { network: "10.0.1.0", wildcard: "0.0.0.255" }
+  - router: "R2"
+    process_id: 1
+    area: 2
+    networks:
+      - { network: "100.100.100.2", wildcard: "0.0.0.0" }
+      - { network: "10.0.2.0", wildcard: "0.0.0.255" }
+  - router: "R3"
+    process_id: 1
+    area: 3
+    networks:
+      - { network: "100.100.100.3", wildcard: "0.0.0.0" }
+      - { network: "10.0.3.0", wildcard: "0.0.0.255" }
+  - router: "R4"
+    process_id: 1
+    area: 4
+    networks:
+      - { network: "100.100.100.4", wildcard: "0.0.0.0" }
+      - { network: "10.0.4.0", wildcard: "0.0.0.255" }
