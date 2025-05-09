@@ -1,1 +1,25 @@
+Lab 3 - Adding Loopback Interfaces, IP Addressing, and Physical Interface Configuration
+Lab 3 focuses on IP address assignment and physical interface setup. You'll automate the creation of loopback interfaces, assign IP addresses, set physical interface descriptions, and activate interfaces, preparing your routers for more complex configurations in future labs.
+
+Related Blog Post:
+http://richardkilleen.co.uk/blog/network-automation/ansible-lab-03-ip-address-configuration-and-loopbacks/
+
+Related Video:
+https://youtu.be/D1pjXEowZfY?si=bdCy2ZF8hDtZMQmA
+
+Video Description:
+In this lab, we build on our Ansible skills by adding basic IP addressing and loopback configurations to our routers. This lab introduces structured interface management using YAML files and Ansible playbooks, preparing our network for more advanced automation tasks.
+
+🔧 What you’ll do in this lab:
+
+Add loopback addresses to R1, R2, R3, and R4 using the 100.100.100.x/32 schema
+
+Create a YAML file to manage router interfaces and IP addresses
+
+Use Ansible playbooks to configure interfaces and bring them up
+
+Validate your configurations with show ip interface brief and show interfaces description
+
+Reuse and extend your Ansible inventory for consistent device management
+
 
