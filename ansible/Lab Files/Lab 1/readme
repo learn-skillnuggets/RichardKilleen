@@ -1,13 +1,17 @@
 Lab 1 - Basics of Installing Ansible and Running Our First Playbook
 This lab introduces the fundamentals of Ansible, covering installation, configuration, and running your first playbook. You'll learn to set up your Ansible control node, define inventory files, and execute basic commands to automate network tasks, providing a solid foundation for more advanced automation.
 
-🔗 Related Blog Post: An Introduction to Ansible for Network Automation
-🎥 Related Video: Watch on YouTube
-📄 Video Description:
+Related Blog Post:
+http://richardkilleen.co.uk/blog/network-automation/ansible/an-introduction-to-ansible-for-network/
+
+Related Video:
+https://youtu.be/CL5DcVm5j0Q?si=LFJ8GldsYVBOxT-r
+
+Video Description:
 Welcome to my introduction to Ansible for network automation!
 In this video, we walk through the complete setup and execution of a basic Ansible playbook to automate Cisco devices running in an EVE-NG lab. Whether you're new to Ansible or just looking to get it working quickly in a network environment—this video has you covered.
 
-🛠️ What we cover in this video:
+🛠️ What we cover in the linked video:
 
 Installing Ansible on your system
 
@@ -16,5 +20,7 @@ Creating the required ansible.cfg configuration file
 Creating your first inventory (hosts) file
 
 Writing and running your first Ansible playbook targeting Cisco IOS devices
+
+Testing everything against a basic Cisco EVE-NG lab
 
 
