@@ -1,0 +1,35 @@
+---
+
+- name: show ntp
+  hosts: edge, routers, junos
+  gather_facts: no
+
+  tasks:
+    - name: display ntp cisco
+      cisco.ios.ios_command:
+        commands:
+          - show ntp config
+          - show ntp associations
+          - show ntp packets
+      register: cisco_ntp
+      when: ansible_network_os == "cisco.ios.ios"
+
+    - name: display cisco ntp
+      debug:
+        msg: "{{ cisco_ntp.stdout_lines  }}"  
+      when: ansible_network_os == "cisco.ios.ios"  
+
+    - name: display junos ntp
+      junipernetworks.junos.junos_command:
+        commands:
+          - show ntp associations
+          - show ntp status
+      register: junos_ntp
+      when: ansible_network_os == "junos"
+
+    - name: display junos output
+      debug:
+        msg: "{{ junos_ntp.stdout_lines }}"
+      when: ansible_network_os == "junos"
+      
+    

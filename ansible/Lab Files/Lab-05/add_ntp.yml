@@ -1,0 +1,25 @@
+---
+- name: Add Multi-Vendor NTP
+  hosts: all
+  gather_facts: no
+  vars:
+    ntp_servers:
+      - "192.168.122.100"
+      - "192.168.122.8"
+
+  tasks:
+    - name: Add NTP Cisco
+      cisco.ios.ios_ntp_global:
+        config:
+          peers:
+            - peer: "{{ item }}"
+      loop: "{{ ntp_servers }}"
+      when: ansible_network_os == "cisco.ios.ios"
+
+    - name: Add NTP Junos
+      junipernetworks.junos.junos_ntp_global:
+        config:
+          peers:
+            - peer: "{{ item }}"
+      loop: "{{ ntp_servers }}"
+      when: ansible_network_os == "junos"

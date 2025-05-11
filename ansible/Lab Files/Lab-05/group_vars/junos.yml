@@ -1,0 +1,8 @@
+---
+
+ansible_user: YouTube
+ansible_ssh_pass: YouTube1
+ansible_connection: netconf
+ansible_network_os: junos
+ansible_network_resources: []
+ansible_ssh_common_args: "-o KexAlgorithms=diffie-hellman-group1-sha1,diffie-hellman-group14-sha1,curve25519-sha256,curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384"

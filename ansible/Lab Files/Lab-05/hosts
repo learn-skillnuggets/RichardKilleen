@@ -1,0 +1,15 @@
+[routers]
+London ansible_host=192.168.122.194
+Manchester ansible_host=192.168.122.132
+Asia ansible_host=192.168.122.226
+America ansible_host=192.168.122.217
+
+[edge]
+R1 ansible_host=192.168.122.21
+R2 ansible_host=192.168.122.22
+R3 ansible_host=192.168.122.23
+R4 ansible_host=192.168.122.24
+
+[junos]
+junos1 ansible_host=192.168.122.101
+

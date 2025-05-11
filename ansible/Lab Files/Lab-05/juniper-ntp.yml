@@ -1,0 +1,20 @@
+---
+- name: NTP Test
+  hosts: junos
+  gather_facts: no
+  collections:
+    - junipernetworks.junos
+  vars:
+    ntp_servers:
+      - "192.168.122.100"
+      - "192.168.122.8"
+  
+  tasks:
+    - name: Add NTP Junos
+      junipernetworks.junos.junos_ntp_global:
+        config:
+          peers: 
+            - peer: "192.168.122.100"
+            - peer: "192.168.122.8"
+        state: "replaced"
+        running_config: ""
