@@ -1,0 +1,28 @@
+Welcome to Lab 5 of the Ansible for Network Engineers series!
+
+In this lab, we expand our Ansible skills by adding a Juniper router to our network and exploring the use of loops and with statements to manage configuration across mixed-vendor environments. This lab is perfect for engineers looking to automate both Cisco and Juniper devices using best practices for Ansible configuration.
+
+🔧 What you’ll do in this lab:
+
+Update your Ansible hosts file for multi-vendor support
+
+Use group variable files to streamline your inventory
+
+Write a single playbook to push NTP configurations to both Cisco IOS and Juniper Junos
+
+Use loops to apply multiple NTP servers in a single playbook
+
+Validate NTP settings on both platforms using show ntp commands
+
+📂 Lab on youtube:
+👉 https://youtu.be/AfaYy2sOqIE?si=EXEHIVw6zGPgFMJJ
+
+📝 Related Blog Post:
+👉 http://richardkilleen.co.uk/blog/network-automation/workbook-05-ansible-configuration-for-cisco-and-juniper-loops-and-with-statements/
+
+📚 This lab is perfect for network engineers who need to manage multi-vendor networks and want to master Ansible’s loop control for efficient configuration management.
+
+🌐 Stay connected:
+Website: https://richardkilleen.co.uk
+🐦 Twitter: https://x.com/richardkilleen
+💼 LinkedIn:   / richard-killeen-81aa3695  
