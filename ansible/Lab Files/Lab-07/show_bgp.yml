@@ -1,0 +1,17 @@
+---
+
+- name: show bgp
+  hosts: routers
+  gather_facts: no
+
+  tasks:
+    - name: shows
+      cisco.ios.ios_command:
+        commands:
+          - show bgp neighbor
+          - show bgp summary
+      register: show
+
+    - name: display shows
+      debug:
+        msg: "{{ show.stdout_lines }}"      

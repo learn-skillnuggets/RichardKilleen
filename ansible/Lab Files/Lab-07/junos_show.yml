@@ -1,0 +1,24 @@
+---
+
+- name: show ospf details
+  hosts: junos
+  gather_facts: no
+
+  tasks:
+    - name: ospf nei
+      junipernetworks.junos.junos_command:
+        commands: show ospf neighbor
+      register: ospf_nei
+
+    - name: display ospf
+      debug:
+        var: ospf_nei.stdout_lines
+
+    - name: show routes
+      junipernetworks.junos.junos_command:
+        commands: show route protocol ospf
+      register: routes
+
+    - name: display routes
+      debug:
+        var: routes.stdout_lines          
