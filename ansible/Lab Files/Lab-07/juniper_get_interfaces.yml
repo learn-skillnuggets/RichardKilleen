@@ -1,0 +1,26 @@
+---
+
+- name: Get Juniper Interface Details
+  hosts: junos
+  gather_facts: no
+
+  tasks:
+    - name: Gather Junos Interface IP Details
+      junipernetworks.junos.junos_command:
+        commands:
+          - show interfaces terse | display json
+      register: juniper_interfaces
+
+    - name: Gather Junos Interface Descriptions
+      junipernetworks.junos.junos_command:
+        commands:
+          - show interfaces descriptions | display json
+      register: juniper_descriptions
+
+    - name: Generate Host Vars File
+      template:
+        src: templates/juniper_interfaces.j2
+        dest: "host_vars/{{ inventory_hostname }}.yml"
+      vars:
+        interfaces: "{{ juniper_interfaces.stdout[0]['interface-information'][0]['physical-interface'] }}"
+        descriptions: "{{ juniper_descriptions.stdout[0]['interface-information'][0]['logical-interface'] }}"
