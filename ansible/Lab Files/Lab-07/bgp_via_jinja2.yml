@@ -1,0 +1,10 @@
+---
+
+- name: Configure bgp on Cisco routers
+  hosts: routers
+  gather_facts: no
+
+  tasks:
+    - name: Deploy bgp Configuration
+      cisco.ios.ios_config:
+        lines: "{{ lookup('template', 'bgp.j2') }}"

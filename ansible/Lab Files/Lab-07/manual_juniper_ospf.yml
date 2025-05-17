@@ -1,0 +1,19 @@
+---
+
+- name: add ospf to junos
+  hosts: junos
+  gather_facts: no
+
+  tasks:
+
+  - name: add ospf
+    junipernetworks.junos.junos_ospfv2:
+      config:
+        - areas:
+            - area_id: 0.0.0.0
+              interfaces:
+               - name: ge-0/0/0.0
+               - name: ge-0/0/1.0
+               - name: ge-0/0/2.0
+               - name: lo0.0
+                 passive: true
