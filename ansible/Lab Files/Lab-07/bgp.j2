@@ -1,7 +1,0 @@
-router bgp {{ ibgp.asn }}
- bgp router-id {{ ibgp.bgp_router_id }}
-{% for peer in ibgp.peers %}
- neighbor {{ peer.neighbor }} remote-as {{ peer.peer_asn }}
- neighbor {{ peer.neighbor }} update-source lo0
- neighbor {{ peer.neighbor }} next-hop-self
-{% endfor %}
