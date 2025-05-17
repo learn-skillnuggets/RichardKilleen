@@ -1,0 +1,17 @@
+---
+
+- name: ospf check
+  hosts: edge, routers
+  gather_facts: no
+
+  tasks:
+    - name: show ospf
+      cisco.ios.ios_command:
+        commands:
+          - show ospf nei
+          - show ip route ospf
+      register: output
+
+    - name: show output
+      debug:
+        msg: "{{ output.stdout_lines }}"      

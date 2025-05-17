@@ -1,0 +1,7 @@
+---
+
+ansible_user: sysadmin
+ansible_ssh_pass: sysadmin123
+ansibe_become: yes
+ansible_become_method: sudo
+ansible_become_password: sysadmin123

@@ -1,0 +1,7 @@
+---
+
+ansible_user: YouTube
+ansible_ssh_pass: YouTube1
+ansible_port: 22
+ansible_connection: network_cli
+ansible_network_os: cisco.ios.ios

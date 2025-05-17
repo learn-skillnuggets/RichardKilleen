@@ -1,0 +1,12 @@
+---
+
+- name: Configure OSPF on Cisco routers
+  hosts: routers, edge
+  gather_facts: no
+
+  tasks:
+    - name: Deploy OSPF Configuration
+      cisco.ios.ios_config:
+        lines: "{{ lookup('template', 'ospf_config.j2') }}"
+      vars:
+        ospf_process: "{{ ospf_processes[0] }}"

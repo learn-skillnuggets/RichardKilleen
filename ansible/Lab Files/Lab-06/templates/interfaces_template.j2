@@ -1,0 +1,14 @@
+interfaces:
+{% for intf_name, intf_data in interfaces.items() %}
+  - name: {{ intf_name }}
+    description: "{{ intf_data.get('description', 'No description') }}"
+{% if intf_data.get('ipv4') is iterable %}
+{% for ip in intf_data.get('ipv4', []) %}
+    ip_address: "{{ ip.get('address', 'No IP') }}"
+    subnet_mask: "{{ ip.get('subnet', 'No Mask') }}"
+{% endfor %}
+{% else %}
+    ip_address: "No IP"
+    subnet_mask: "No Mask"
+{% endif %}
+{% endfor %}

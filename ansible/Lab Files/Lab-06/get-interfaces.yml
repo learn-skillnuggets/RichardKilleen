@@ -1,0 +1,20 @@
+---
+
+- name: Gather Interfaces in YAML Format
+  hosts: routers
+  gather_facts: no
+
+  tasks:
+    - name: Gather Cisco IOS Interface Facts
+      cisco.ios.ios_facts:
+        gather_subset: interfaces
+      register: cisco_facts
+
+
+    - name: Format Interface Data (Cisco)
+      template:
+        src: templates/interfaces_template.j2
+        dest: "host_vars/{{ inventory_hostname }}.yml"
+      vars:
+        interfaces: "{{ cisco_facts.ansible_facts.ansible_net_interfaces }}"
+
