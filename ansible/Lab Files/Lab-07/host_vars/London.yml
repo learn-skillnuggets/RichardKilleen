@@ -54,3 +54,14 @@ ospf_processes:
       - address: 192.168.198.0
         wildcard_bits: 0.0.0.255
         area: 0
+
+ibgp:
+  asn: "65000"
+  bgp_router_id: 2.2.2.2
+  peers:
+    - neighbor: "1.1.1.1"
+      peer_asn: "65000"
+      update_source: "lo0"
+    - neighbor: "3.3.3.3"
+      peer_asn: "65000"
+      update_source: "lo0"
