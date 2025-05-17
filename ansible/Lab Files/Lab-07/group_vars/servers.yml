@@ -1,0 +1,7 @@
+---
+
+ansible_user: admin
+ansible_ssh_pass: admin
+ansibe_become: yes
+ansible_become_method: sudo
+ansible_become_password: admin

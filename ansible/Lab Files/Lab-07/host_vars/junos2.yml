@@ -1,0 +1,24 @@
+
+
+interfaces:
+  ge-0/0/0.0:
+    description: "link to Asia"
+    ip_address: "192.168.197.1"
+    subnet_mask: "24"
+  ge-0/0/1.0:
+    description: "link to America"
+    ip_address: "192.168.196.1"
+    subnet_mask: "24"
+  ge-0/0/2.0:
+    description: "link to junos1"
+    ip_address: "192.168.195.2"
+    subnet_mask: "24"
+  fxp0.0:
+    description: ""
+    ip_address: "192.168.122.102"
+    subnet_mask: "24"
+  lo0.0:
+    description: ""
+    ip_address: "6.6.6.6"
+    subnet_mask: "0"
+

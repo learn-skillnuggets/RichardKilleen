@@ -1,0 +1,24 @@
+
+
+interfaces:
+  ge-0/0/0.0:
+    description: "link to Manchester"
+    ip_address: "192.168.199.1"
+    subnet_mask: "24"
+  ge-0/0/1.0:
+    description: "link to London"
+    ip_address: "192.168.198.1"
+    subnet_mask: "24"
+  ge-0/0/2.0:
+    description: "link to Junos2"
+    ip_address: "192.168.195.1"
+    subnet_mask: "24"
+  fxp0.0:
+    description: ""
+    ip_address: "192.168.122.101"
+    subnet_mask: "24"
+  lo0.0:
+    description: ""
+    ip_address: "5.5.5.5"
+    subnet_mask: "0"
+  

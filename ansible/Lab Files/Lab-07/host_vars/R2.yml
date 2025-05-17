@@ -1,0 +1,29 @@
+---
+
+ansible_user: YouTube
+ansible_ssh_pass: YouTube1
+ansible_port: 22
+ansible_connection: network_cli
+ansible_network_os: cisco.ios.ios
+
+interfaces:
+  - name: GigabitEthernet 2
+    description: "Link to London"
+    ip_address: 10.0.2.1
+    subnet_mask: 255.255.255.0
+
+  - name: Loopback 0
+    description: "MGMT loopback"
+    ip_address: 100.100.100.2
+    subnet_mask: 255.255.255.255
+
+ospf_processes:
+  - process_id: 3
+    router_id: 100.100.100.2
+    networks:
+      - address: 10.0.2.0
+        wildcard_bits: 0.0.0.255
+        area: 2
+      - address: 100.100.100.2
+        wildcard_bits: 0.0.0.0
+        area: 2

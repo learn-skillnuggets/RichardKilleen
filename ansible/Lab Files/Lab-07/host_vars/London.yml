@@ -1,0 +1,56 @@
+---
+
+ansible_user: YouTube
+ansible_ssh_pass: YouTube1
+ansible_port: 22
+ansible_connection: network_cli
+ansible_network_os: cisco.ios.ios
+
+interfaces:
+  - name: GigabitEthernet 1
+    description: ""
+    ip_address: "192.168.122.194"
+    subnet_mask: "255.255.255.0"
+  - name: GigabitEthernet 2
+    description: "Asia-G2"
+    ip_address: "172.16.40.2"
+    subnet_mask: "255.255.255.0"
+  - name: GigabitEthernet 3
+    description: "Manchester-G3"
+    ip_address: "172.16.10.2"
+    subnet_mask: "255.255.255.0"
+  - name: GigabitEthernet 4
+    description: "R2-G2"
+    ip_address: "10.0.2.2"
+    subnet_mask: "255.255.255.0"
+  - name: GigabitEthernet 5
+    description: ""
+  - name: GigabitEthernet 6
+    description: ""
+  - name: Loopback 0
+    description: "Main-Loopback"
+    ip_address: "2.2.2.2"
+    subnet_mask: "255.255.255.255"
+
+ospf_processes:
+  - process_id: 1
+    router_id: 2.2.2.2
+    networks:
+      - address: 10.0.2.0
+        wildcard_bits: 0.0.0.255
+        area: 2
+      - address: 2.2.2.2
+        wildcard_bits: 0.0.0.0
+        area: 0
+      - address: 172.16.40.0
+        wildcard_bits: 0.0.0.255
+        area: 0
+      - address: 172.16.10.0
+        wildcard_bits: 0.0.0.255
+        area: 0
+      - address: 192.168.98.0
+        wildcard_bits: 0.0.0.255
+        area: 0
+      - address: 192.168.198.0
+        wildcard_bits: 0.0.0.255
+        area: 0

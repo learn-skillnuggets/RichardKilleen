@@ -1,0 +1,11 @@
+# {{ inventory_hostname }} Interfaces
+
+interfaces:
+{% for intf in interfaces %}
+{% for subif in intf.get('logical-interface', []) %}
+  {{ subif['name'][0]['data'] }}:
+    description: "{% for desc in descriptions if desc['name'][0]['data'] == subif['name'][0]['data'] %}{{ desc.get('description', [{'data': 'no description'}])[0]['data'] | default('no description') }}{% endfor %}"
+    ip_address: "{{ subif.get('address-family', [{}])[0].get('interface-address', [{}])[0].get('ifa-local', [{'data': 'no ip'}])[0]['data'].split('/')[0] | default('no ip') }}"
+    subnet_mask: "{{ subif.get('address-family', [{}])[0].get('interface-address', [{}])[0].get('ifa-local', [{'data': 'no ip'}])[0]['data'].split('/')[1] | default('0') }}"
+{% endfor %}
+{% endfor %}
