@@ -1,0 +1,63 @@
+Building configuration...
+!! IOS XR Configuration 6.6.2.10I
+!! Last configuration change at Sat Jun  7 17:55:45 2025 by Automation
+!
+hostname Y-P1
+domain vrf mgmt name-server 8.8.8.8
+domain vrf mgmt lookup source-interface MgmtEth0/RP0/CPU0/0
+domain name dickie.com
+username Automation
+ group netadmin
+ password 7 096D5B1D1608160602030A7B
+!
+vrf mgmt
+ address-family ipv4 unicast
+ !
+!
+interface Loopback0
+ description Main-Loopback
+ ipv4 address 100.0.0.35 255.255.255.255
+!
+interface MgmtEth0/0/CPU0/0
+ vrf mgmt
+ ipv4 address 192.168.122.35 255.255.255.0
+!
+interface GigabitEthernet0/0/0/0
+ description link to y-asbr1
+ ipv4 address 2.201.2.2 255.255.255.0
+!
+interface GigabitEthernet0/0/0/1
+ description link to y-asbr2
+ ipv4 address 2.201.4.1 255.255.255.0
+!
+interface GigabitEthernet0/0/0/2
+ description link to Y-PE1
+ ipv4 address 2.201.5.1 255.255.255.0
+!
+interface GigabitEthernet0/0/0/3
+ description link to y-pe2
+ ipv4 address 2.201.6.1 255.255.255.0
+!
+interface GigabitEthernet0/0/0/4
+ description link to y-rr1
+ ipv4 address 2.201.7.1 255.255.255.0
+!
+interface GigabitEthernet0/0/0/5
+ shutdown
+!
+interface GigabitEthernet0/0/0/6
+ shutdown
+!
+interface GigabitEthernet0/0/0/7
+ shutdown
+!
+router static
+ vrf mgmt
+  address-family ipv4 unicast
+   0.0.0.0/0 192.168.122.1
+  !
+ !
+!
+ssh server v2
+ssh server vrf mgmt
+end

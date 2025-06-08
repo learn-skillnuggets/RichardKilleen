@@ -1,0 +1,42 @@
+Building configuration...
+!! IOS XR Configuration 6.6.2.10I
+!! Last configuration change at Sat Jun  7 17:54:50 2025 by Automation
+!
+hostname X-CE3
+domain vrf mgmt name-server 8.8.8.8
+domain vrf mgmt lookup source-interface MgmtEth0/RP0/CPU0/0
+domain name dickie.com
+username Automation
+ group netadmin
+ password 7 002506120B560A12062E421F
+!
+username automation
+ password 7 1416071F03092B3F2D273D64
+!
+vrf mgmt
+ address-family ipv4 unicast
+ !
+!
+interface Loopback0
+ description Main-Loopback
+ ipv4 address 100.0.0.13 255.255.255.255
+!
+interface MgmtEth0/0/CPU0/0
+ vrf mgmt
+ ipv4 address 192.168.122.13 255.255.255.0
+!
+interface GigabitEthernet0/0/0/0
+ description link to pe3
+ ipv4 address 172.203.1.1 255.255.255.0
+!
+router static
+ vrf mgmt
+  address-family ipv4 unicast
+   0.0.0.0/0 192.168.122.1
+  !
+ !
+!
+ssh server v2
+ssh server vrf mgmt
+ssh server vrf management
+end
