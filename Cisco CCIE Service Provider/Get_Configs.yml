@@ -1,0 +1,29 @@
+---
+- name: Collect running config from IOS and IOS-XR routers
+  hosts: all
+  gather_facts: no
+  tasks:
+
+    - name: Get running config (IOS)
+      cisco.ios.ios_command:
+        commands: show running-config
+      register: ios_config
+      when: ansible_network_os == "cisco.ios.ios"
+
+    - name: Save IOS config to file
+      copy:
+        content: "{{ ios_config.stdout[0] }}"
+        dest: "Base_IPv4_Configs/{{ inventory_hostname }}.txt"
+      when: ansible_network_os == "cisco.ios.ios"
+
+    - name: Get running config (IOS-XR)
+      cisco.iosxr.iosxr_command:
+        commands: show running-config
+      register: iosxr_config
+      when: ansible_network_os == "cisco.iosxr.iosxr"
+
+    - name: Save IOS-XR config to file
+      copy:
+        content: "{{ iosxr_config.stdout[0] }}"
+        dest: "Base_IPv4_Configs/{{ inventory_hostname }}.txt"
+      when: ansible_network_os == "cisco.iosxr.iosxr"

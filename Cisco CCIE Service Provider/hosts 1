@@ -1,0 +1,48 @@
+[X_CE]
+X-CE1 ansible_host=192.168.122.11
+X-CE2 ansible_host=192.168.122.12
+X-CE3 ansible_host=192.168.122.13
+X-CE4 ansible_host=192.168.122.14
+X-CE5 ansible_host=192.168.122.15
+X-CE6 ansible_host=192.168.122.16
+
+[X_PE]
+X-PE1 ansible_host=192.168.122.21
+X-PE2 ansible_host=192.168.122.22
+X-PE3 ansible_host=192.168.122.23
+X-PE4 ansible_host=192.168.122.24
+
+[X_RR]
+X-RR1 ansible_host=192.168.122.25
+X-RR2 ansible_host=192.168.122.26
+
+[X_Core]
+X-P1 ansible_host=192.168.122.27
+X-P2 ansible_host=192.168.122.28
+X-P3 ansible_host=192.168.122.29
+X-P4 ansible_host=192.168.122.30
+
+[X_ASBR]
+X-ASBR1 ansible_host=192.168.122.31
+X-ASBR2 ansible_host=192.168.122.32
+
+[Y_ASBR]
+Y-ASBR1 ansible_host=192.168.122.33
+Y-ASBR2 ansible_host=192.168.122.34
+
+[Y_Core]
+Y-P1 ansible_host=192.168.122.35
+
+[Y_PE]
+Y-PE1 ansible_host=192.168.122.36
+Y-PE2 ansible_host=192.168.122.37
+
+[Y_RR]
+Y-RR1 ansible_host=192.168.122.38
+
+[Y_CE]
+Y-CE1 ansible_host=192.168.122.39
+Y-CE2 ansible_host=192.168.122.40
+Y-CE3 ansible_host=192.168.122.41
+Y-CE4 ansible_host=192.168.122.42
+

@@ -1,0 +1,27 @@
+---
+- name: Configure interfaces on IOS-XE and IOS-XR routers
+  hosts: all
+  gather_facts: no
+  tasks:
+
+    - name: Build IOS interface config
+      ansible.builtin.template:
+        src: ios_interfaces.j2
+        dest: /tmp/{{ inventory_hostname }}_interfaces.cfg
+      when: ansible_network_os == "cisco.ios.ios"
+
+    - name: Apply IOS interface config
+      cisco.ios.ios_config:
+        src: /tmp/{{ inventory_hostname }}_interfaces.cfg
+      when: ansible_network_os == "cisco.ios.ios"
+
+    - name: Build IOS-XR interface config
+      ansible.builtin.template:
+        src: iosxr_interfaces.j2
+        dest: /tmp/{{ inventory_hostname }}_xr_interfaces.cfg
+      when: ansible_network_os == "cisco.iosxr.iosxr"
+
+    - name: Apply IOS-XR interface config
+      cisco.iosxr.iosxr_config:
+        src: /tmp/{{ inventory_hostname }}_xr_interfaces.cfg
+      when: ansible_network_os == "cisco.iosxr.iosxr"
