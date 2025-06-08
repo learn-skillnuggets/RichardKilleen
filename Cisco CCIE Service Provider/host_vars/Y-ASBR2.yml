@@ -1,0 +1,30 @@
+---
+
+ansible_user: Automation
+ansible_ssh_pass: Automation1
+ansible_port: 22
+ansible_connection: network_cli
+ansible_network_os: cisco.iosxr.iosxr
+
+
+interfaces:
+  - name: GigabitEthernet 0/0/0/0
+    description: "link to y-asbr1"
+    ip_address: "2.201.1.2"
+    subnet_mask: "255.255.255.0"
+  - name: GigabitEthernet 0/0/0/1
+    description: "link to y-asbr2 "
+    ip_address: "10.1.102.1"
+    subnet_mask: "255.255.255.0"
+  - name: GigabitEthernet 0/0/0/2
+    description: "link to Y-P1"
+    ip_address: "2.201.4.2"
+    subnet_mask: "255.255.255.0"
+  - name: GigabitEthernet 0/0/0/3
+    description: "link to y-ce3"
+    ip_address: "172.222.5.2"
+    subnet_mask: "255.255.255.0"
+  - name: Loopback 0
+    description: "Main-Loopback"
+    ip_address: "100.0.0.34"
+    subnet_mask: "255.255.255.255"
