@@ -1,0 +1,7 @@
+{% for iface in interfaces %}
+interface {{ iface.name }}
+ description {{ iface.description }}
+ ipv4 address {{ iface.ip_address }} {{ iface.subnet_mask }}
+ no shutdown
+!
+{% endfor %}
