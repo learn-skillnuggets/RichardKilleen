@@ -2,7 +2,7 @@
 
 Welcome to the central GitHub repository for my personal brand and technical documentation — **Richard Killeen**, network engineer, CCIE Service Provider candidate, and automation advocate.
 
-This repository supports my platform at http://richardkilleen.co.uk , where I share technical blogs, walkthroughs, lab workbooks, and videos focused on networking and automation — especially in service provider environments.
+This repository supports my platform at https://richardkilleen.co.uk , where I share technical blogs, walkthroughs, lab workbooks, and videos focused on networking and automation — especially in service provider environments.
 
 ---
 
