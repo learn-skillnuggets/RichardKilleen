@@ -6,7 +6,7 @@ This repository supports my platform at http://richardkilleen.co.uk , where I sh
 
 ---
 
-## 🔍 What This Repository Includes
+##  What This Repository Includes
 
 This repository acts as a reference index and file host for:
 
@@ -26,7 +26,7 @@ This repository acts as a reference index and file host for:
 
 ---
 
-## 📦 Folder Structure
+##  Folder Structure
 
 ```
 /
@@ -48,16 +48,16 @@ This repository acts as a reference index and file host for:
 
 ---
 
-## 🔗 External Links
+##  External Links
 
-- 🌐 [richardkilleen.co.uk](https://richardkilleen.co.uk)
-- 🎥 [YouTube: SkillNuggets](https://www.youtube.com/@SkillNuggets)
-- 💼 [LinkedIn](https://www.linkedin.com/in/richardkilleen)
+-  [richardkilleen.co.uk](https://richardkilleen.co.uk)
+-  [YouTube: SkillNuggets](https://www.youtube.com/@SkillNuggets)
+-  [LinkedIn](https://www.linkedin.com/in/richard-killeen-81aa3695/)
 
 
 ---
 
-## 📥 How to Use
+##  How to Use
 
 1. Browse categories relevant to your learning track.
 2. Download or clone automation scripts, configs, and topologies.
@@ -66,7 +66,7 @@ This repository acts as a reference index and file host for:
 
 ---
 
-## 📚 Related Categories
+##  Related Categories
 
 - Network Automation (Ansible, pyATS, Python)
 - Cisco Configuration Labs (IOS-XR, IOS-XE)
@@ -75,7 +75,7 @@ This repository acts as a reference index and file host for:
 
 ---
 
-## ⚠️ Disclaimer
+##  Disclaimer
 
 All content is for **educational purposes only**.  
 Always test scripts and configurations in a safe lab environment before applying to production.  
@@ -83,7 +83,7 @@ Cisco, Juniper, and related trademarks belong to their respective owners.
 
 ---
 
-## 📣 Stay Updated
+##  Stay Updated
 
 This repo will grow alongside my ongoing CCIE SP studies and automation projects.  
 Star ⭐ this repository and subscribe at [richardkilleen.co.uk](https://richardkilleen.co.uk) for new releases.
