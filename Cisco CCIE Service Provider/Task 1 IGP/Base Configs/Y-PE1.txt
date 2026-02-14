@@ -1,0 +1,73 @@
+
+hostname Y-PE1
+domain vrf mgmt name-server 8.8.8.8
+domain vrf mgmt lookup source-interface MgmtEth0/RP0/CPU0/0
+domain name dickie.com
+username Automation
+ group netadmin
+ password 7 0800595A061404031B040255
+!
+vrf mgmt
+ address-family ipv4 unicast
+ !
+!
+line default
+ exec-timeout 0 0
+ transport input ssh
+!
+interface Loopback0
+ description Main-Loopback
+ ipv4 address 100.0.0.36 255.255.255.255
+ ipv6 address 2620:fc7:100::36/128
+!
+interface MgmtEth0/0/CPU0/0
+ vrf mgmt
+ ipv4 address 192.168.122.36 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet0/0/0/0
+ description link to y-p1
+ ipv4 address 2.201.5.2 255.255.255.0
+ ipv6 address 2620:fc7:2205::2/64
+ no shutdown
+!
+interface GigabitEthernet0/0/0/1
+ description link to y-pe2
+ ipv4 address 2.201.3.1 255.255.255.0
+ ipv6 address 2620:fc7:2203::1/64
+ no shutdown
+!
+interface GigabitEthernet0/0/0/2
+ description link to Y-CE2
+ ipv4 address 172.222.4.1 255.255.255.0
+ ipv6 address 2620:fc7:172:2224::1/64
+ no shutdown
+!
+interface GigabitEthernet0/0/0/3
+ description link to y-ce1
+ ipv4 address 172.222.1.1 255.255.255.0
+ ipv6 address 2620:fc7:172:2221::1/64
+ no shutdown
+!
+interface GigabitEthernet0/0/0/4
+ shutdown
+!
+interface GigabitEthernet0/0/0/5
+ shutdown
+!
+interface GigabitEthernet0/0/0/6
+ shutdown
+!
+interface GigabitEthernet0/0/0/7
+ shutdown
+!
+router static
+ vrf mgmt
+  address-family ipv4 unicast
+   0.0.0.0/0 192.168.122.1
+  !
+ !
+!
+ssh server v2
+ssh server vrf mgmt
+end

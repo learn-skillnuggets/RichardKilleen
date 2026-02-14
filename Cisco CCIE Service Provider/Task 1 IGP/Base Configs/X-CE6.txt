@@ -1,0 +1,112 @@
+Building configuration...
+!! IOS XR Configuration 6.6.2.10I
+!! Last configuration change at Sat Jun 21 14:35:26 2025 by Automation
+!
+hostname X-CE6
+domain vrf mgmt name-server 8.8.8.8
+domain vrf mgmt lookup source-interface MgmtEth0/RP0/CPU0/0
+domain name dickie.com
+domain name-server 8.8.8.8
+username pyats
+ group netadmin
+ password 7 0831554F1D0A
+!
+username Automation
+ group netadmin
+ password 7 052A131B2E414F1D100A1943
+!
+username automation
+ group netadmin
+ password 7 130402060401053E222B2662
+!
+cdp
+vrf mgmt
+ address-family ipv4 unicast
+ !
+!
+vrf management
+ address-family ipv4 unicast
+ !
+!
+line default
+ exec-timeout 0 0
+ transport input ssh
+!
+snmp-server vrf management
+!
+snmp-server host 192.168.122.190 traps version 3 priv snmp
+snmp-server host 192.168.122.190 traps version 2c public
+snmp-server user snmp SNMPGROUP v3 auth sha encrypted 106F1C0D0D2713181F55 priv aes 128 encrypted 1335051B1D3C05393875
+snmp-server user SNMPUSER SNMP-GRP v3 auth md5 encrypted 0448050B1F701E1D priv aes 128 encrypted 08324243194A5746
+snmp-server view SNMPVIEW iso included
+snmp-server community public RO
+snmp-server group SNMPGRP v3 auth read default
+snmp-server group LABGROUP v3 auth read default
+snmp-server group SNMP-GRP v3 auth read default write default
+snmp-server group SNMPGROUP v3 priv read SNMPVIEW
+snmp-server traps snmp
+snmp-server contact Lab Admin
+snmp-server location Rack 1
+snmp-server trap-source IPv4 MgmtEth0/RP0/CPU0/0
+call-home
+ service active
+ contact smart-licensing
+ profile CiscoTAC-1
+  active
+  destination transport-method http
+ !
+!
+interface Loopback0
+ description Main-Loopback
+ ipv4 address 100.0.0.16 255.255.255.255
+ ipv6 address 2620:fc7:100::16/128
+!
+interface MgmtEth0/0/CPU0/0
+ vrf mgmt
+ ipv4 address 192.168.122.16 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet0/0/0/0
+ description link to pe4
+ cdp
+ ipv4 address 172.206.1.6 255.255.255.0
+ ipv6 address 2620:fc7:172:2061::6/64
+ no shutdown
+!
+interface GigabitEthernet0/0/0/1
+ cdp
+!
+interface GigabitEthernet0/0/0/2
+ shutdown
+!
+interface GigabitEthernet0/0/0/3
+ shutdown
+!
+interface GigabitEthernet0/0/0/4
+ shutdown
+!
+interface GigabitEthernet0/0/0/5
+ shutdown
+!
+interface GigabitEthernet0/0/0/6
+ shutdown
+!
+interface GigabitEthernet0/0/0/7
+ shutdown
+!
+router static
+ vrf mgmt
+  address-family ipv4 unicast
+   0.0.0.0/0 192.168.122.1
+  !
+ !
+ vrf management
+  address-family ipv4 unicast
+   0.0.0.0/0 192.168.122.1
+  !
+ !
+!
+ssh server v2
+ssh server vrf mgmt
+ssh server vrf management
+end

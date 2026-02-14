@@ -1,0 +1,189 @@
+
+hostname Y-CE2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+vrf definition mgmt
+ !
+ address-family ipv4
+ exit-address-family
+!
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+ip name-server vrf mgmt 8.8.8.8
+ip domain name dickie.com
+!
+!
+!
+login on-success log
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+! 
+! 
+! 
+! 
+!
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 9PLKU4NWATM
+diagnostic bootup level minimal
+memory free low-watermark processor 71507
+!
+!
+spanning-tree extend system-id
+!
+username Automation privilege 15 password 0 Automation1
+!
+redundancy
+!
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+!
+!
+interface Loopback0
+ description Main-Loopback
+ ip address 100.0.0.40 255.255.255.255
+ ipv6 address 2620:FC7:100::40/128
+!
+interface GigabitEthernet1
+ description link to asbr1
+ ip address 172.222.3.2 255.255.255.0
+ negotiation auto
+ ipv6 address 2620:FC7:172:2223::2/64
+ no mop enabled
+ no mop sysid
+ no shutdown
+!
+interface GigabitEthernet2
+ description link to pe1
+ ip address 172.222.4.2 255.255.255.0
+ negotiation auto
+ ipv6 address 2620:FC7:172:2224::2/64
+ no mop enabled
+ no mop sysid
+ no shutdown
+!
+interface GigabitEthernet3
+ no ip address
+ negotiation auto
+ no mop enabled
+ no mop sysid
+ no shutdown
+!
+interface GigabitEthernet4
+ no ip address
+ negotiation auto
+ no mop enabled
+ no mop sysid
+ no shutdown
+!
+interface GigabitEthernet5
+ no ip address
+ negotiation auto
+ no mop enabled
+ no mop sysid
+ no shutdown
+!
+interface GigabitEthernet6
+ description mgmt interface
+ vrf forwarding mgmt
+ ip dhcp client client-id ascii cisco-5091.ad00.f805-Gi6
+ ip address 192.168.122.40 255.255.255.0
+ negotiation auto
+ no mop enabled
+ no mop sysid
+ no shutdown
+!
+ip forward-protocol nd
+ip http server
+ip http authentication local
+ip http secure-server
+ip http client source-interface GigabitEthernet6
+!
+ip route vrf mgmt 0.0.0.0 0.0.0.0 192.168.122.1
+ip ssh version 2
+!
+!
+!
+!
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ stopbits 1
+line vty 0 4
+ login local
+ transport input ssh
+!
+call-home
+ ! If contact email address in call-home is configured as sch-smart-licensing@cisco.com
+ ! the email address configured in Cisco Smart License Portal will be used as contact email address to send SCH notifications.
+ contact-email-addr sch-smart-licensing@cisco.com
+ profile "CiscoTAC-1"
+  active
+  destination transport-method http
+!
+!
+!
+!
+!
+end
